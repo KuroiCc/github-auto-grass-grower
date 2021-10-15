@@ -4,3 +4,4 @@ git clone ${repo_url:?"repo url has not been set"} repo
 echo "init git done."
 sed -i "$ c${gpu_schedule:-"0 12 * * *"} /bin/sh /scripts/auto_commit.sh" var/spool/cron/crontabs/root
 crond -b
+sh /scripts/auto_commit.sh
