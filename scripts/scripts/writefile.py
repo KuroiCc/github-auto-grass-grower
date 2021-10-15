@@ -41,22 +41,21 @@ class HumanLikeCommit():
         if not self.human_like:
             return self.record(commit_text)
 
-        with open(self.path) as file:
-            lines = file.readlines()
-            last_line = lines[-1][:-1]
-
-        status = last_line[20:26]
-
         try:
+            with open(self.path) as file:
+                lines = file.readlines()
+                last_line = lines[-1][:-1]
+
+            status = last_line[20:26]
+
             if status == "commit":
 
                 index_from = len(self.__now()) + len(" commit from ")
-                num_of_day_commited = self.__get_interval_day(
-                    last_line[index_from:index_from + len(self.__now())]  # 連続recordの最初の日
-                )
+                day_form = last_line[index_from:index_from + len(self.__now())]  # 連続recordの最初の日
+                num_of_day_commited = self.__get_interval_day(day_form)
 
                 if self.__is_record_after_n_days_commit(num_of_day_commited):
-                    self.record(commit_text)
+                    self.record(self.__now() + " commit from " + day_form + "\n")
                 else:
                     self.record(self.__now() + " off***" + "\n")
 
@@ -128,9 +127,15 @@ class HumanLikeCommit():
 
 
 if __name__ == "__main__":
-    path = sys.argv[-1]
+    path = sys.argv[1]
+    human_like = sys.argv[2]
+    if human_like == "0":
+        human_like = True
+    else:
+        human_like = False
 
-    HumanLikeCommit(path="./test/records.txt")
+    HumanLikeCommit(path=path, human_like=human_like)
 
+    # print(human_like)
     # for i in range(30):
     #     HumanLikeCommit(path="./test/records.txt")
