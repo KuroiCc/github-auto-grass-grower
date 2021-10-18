@@ -20,17 +20,6 @@ class HumanLikeCommit():
     def __call__(self) -> Any:
         self.human_like_record()
 
-        # test = "off***  "
-        # test2 = "commit  "
-        # for i in range(1, 5):
-        #     test += "%d日目で%-0.3f, " % (i + 1, self.__nverse_proportional_like_func(x=i, k=-1, a=1.1, b=1, c=1))
-        #     test2 += "%d日目で%-0.3f, " % (i + 1, self.__nverse_proportional_like_func(x=i, k=1.1, a=0.2, b=1))
-        # test2 += "%d日目で%-0.3f, " % (10, self.__nverse_proportional_like_func(x=9, k=1.1, a=0.2, b=1))
-        # test2 += "%d日目で%-0.3f, " % (30, self.__nverse_proportional_like_func(x=29, k=1.1, a=0.2, b=1))
-
-        # print(test, "\n", test2)
-        # print(self.__now())
-
     def human_like_record(self) -> Any:
         """
         record text like:
@@ -90,7 +79,7 @@ class HumanLikeCommit():
         連続して休んだ日数 (n >= 1) に基づいて、今日recordするかどうか (True or False) を返す。
         マジックナンバー k=-1, a=1.1, b=1, c=1 を使うと次の確率でrecordする:2日目で0.524, 3日目で0.688, 4日目で0.767, 5日目で0.815。
         """
-        if n == 0:
+        if n == 0 or n == -1:
             raise ZeroDivisionError
         elif n < 1:
             return True
