@@ -8,7 +8,7 @@ if [ $1 -gt 365 ]; then
     exit
 fi
 
-now_time=$(date +"%G-%m-%d %H:%M:%S")
+now_time=$(date +"%G-%m-%d-%H:%M:%S")
 
 path="test/records-${now_time}.txt"
 
