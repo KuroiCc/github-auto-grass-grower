@@ -15,7 +15,7 @@ $ docker pull kuroicc/github-auto-grass-grower
 
 ### Step3
 
-以下のようなコマンドを実行すると動きます。例にある四つの環境変数は必要変数です。
+以下のようなコマンドを実行すると動きます。例にある五つの環境変数は必要変数です。
 ```shell
 docker run -it \
 -e TZ="Asia/Tokyo" \
