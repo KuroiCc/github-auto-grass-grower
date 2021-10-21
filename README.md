@@ -1,10 +1,10 @@
 # Github auto grass grower
 
-## 使用方法
+## 使用方法
 
-### Step1
+### Step1
 
-[このページ](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)にしたがってGithubのaccess tokenを取り出す。
+[このページ](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)にしたがってGithubのaccess tokenを取り出す。
 
 ### Step2
 
