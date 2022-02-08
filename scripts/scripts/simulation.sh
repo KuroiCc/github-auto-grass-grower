@@ -1,5 +1,5 @@
 if [ ! $1 ]; then
-    echo 'ERROR: Need to apply loop param'
+    echo 'ERROR: need to specify continuous days'
     exit
 fi
 
